@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowRight, Cpu } from 'lucide-react';
 import { Button } from '../components/Button';
-import { Logo } from '../components/Logo';
+// Logo import removed to eliminate the white rectangle in Hero section
 
 export const Hero: React.FC = () => {
   return (
@@ -23,10 +23,7 @@ export const Hero: React.FC = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-20">
         <div className="lg:w-3/4">
-          {/* Prominent Branding Element */}
-          <div className="mb-10">
-            <Logo className="h-16 md:h-24 w-auto" lightMode={true} />
-          </div>
+          {/* Logo removed per request to delete the white rectangle above text */}
 
           <div className="inline-flex items-center space-x-2 bg-sky-900/30 border border-sky-700/50 rounded-full px-4 py-1.5 mb-8 backdrop-blur-sm">
             <Cpu className="w-4 h-4 text-bayer" />
