@@ -1,8 +1,11 @@
 import React from 'react';
 import { SectionWrapper } from '../components/SectionWrapper';
 import { CheckCircle2 } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export const About: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <SectionWrapper id="about" className="bg-white">
       <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
@@ -21,8 +24,8 @@ export const About: React.FC = () => {
             
             {/* Overlay stats card */}
             <div className="absolute -bottom-6 -right-6 bg-bayer-dark p-6 z-20 shadow-xl max-w-xs border-l-4 border-cyan-500">
-              <p className="text-cyan-400 text-sm font-bold uppercase tracking-wider mb-1">Erfahrung</p>
-              <p className="text-white text-lg font-medium">Langjährige Expertise in der Automatisierungstechnik.</p>
+              <p className="text-cyan-400 text-sm font-bold uppercase tracking-wider mb-1">{t.about.experience}</p>
+              <p className="text-white text-lg font-medium">{t.about.experienceDesc}</p>
             </div>
           </div>
         </div>
@@ -30,24 +33,19 @@ export const About: React.FC = () => {
         {/* Content Section */}
         <div className="w-full lg:w-1/2">
           <h2 className="text-3xl md:text-4xl font-bold text-bayer-dark mb-6">
-            Über <span className="text-cyan-600">Bayer Automation</span>
+            {t.about.title} <span className="text-cyan-600">{t.about.titleHighlight}</span>
           </h2>
           
           <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-            Als spezialisiertes Ingenieurbüro vereinen wir technische Exzellenz mit tiefgreifendem Verständnis für industrielle Prozesse. Unser Ziel ist es, die Effizienz Ihrer Produktion durch fortschrittliche Automatisierungslösungen nachhaltig zu steigern.
+            {t.about.p1}
           </p>
           
           <p className="text-gray-600 mb-8 leading-relaxed">
-            Wir stehen für Präzision, Innovation und Verlässlichkeit. Von der Planung neuer Anlagen bis zur Modernisierung (Retrofit) bestehender Maschinen begleiten wir Sie als kompetenter Partner durch das gesamte Projekt.
+            {t.about.p2}
           </p>
 
           <div className="space-y-4">
-            {[
-              "Zertifizierte Experten für Siemens & Beckhoff Systeme",
-              "Ganzheitliches Projektmanagement",
-              "Flexibilität und schnelle Reaktionszeiten",
-              "Einhaltung internationaler Standards (IEC)"
-            ].map((item, index) => (
+            {t.about.features.map((item, index) => (
               <div key={index} className="flex items-center space-x-3">
                 <CheckCircle2 className="w-5 h-5 text-cyan-500 flex-shrink-0" />
                 <span className="text-gray-700 font-medium">{item}</span>

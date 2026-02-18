@@ -29,6 +29,8 @@
     <style>
       html {
         scroll-behavior: smooth;
+        /* Critical for fixed header navigation: ensures content isn't hidden behind the 80px header */
+        scroll-padding-top: 80px;
       }
       /* Custom scrollbar for technical feel */
       ::-webkit-scrollbar {
